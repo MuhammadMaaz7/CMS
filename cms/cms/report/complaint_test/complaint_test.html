@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        th,
+        td {
+            border: 3px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-weight: bold;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .text-muted {
+            color: #6c757d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>{%= __("Custom Task Report") %}</h1>
+    </div>
+    <h4 class="text-center">
+        {%= __("Report for") %} {%= filters.task_name || __("All Tasks") %}
+    </h4>
+    <h5 class="text-center {%= filters.start_date ? "" : " hidden" %}">
+        {%= __("From: ") %} {%= filters.start_date ? frappe.datetime.str_to_user(filters.start_date) : __("") %}
+    </h5>
+    <h5 class="text-center {%= filters.end_date ? "" : " hidden" %}">
+        {%= __("To: ") %} {%= filters.end_date ? frappe.datetime.str_to_user(filters.end_date) : __("") %}
+    </h5>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 5%">{%= __("S.No.") %}</th>
+                <th style="width: 8%">{%= __("Task Name") %}</th>
+                <th style="width: 18%">{%= __("Task Description") %}</th>
+                <th style="width: 9%">{%= __("Task Generator") %}</th>
+                <th style="width: 9%">{%= __("Assigned To") %}</th>
+                <th style="width: 12%">{%= __("Start Date") %}</th>
+                <th style="width: 12%">{%= __("End Date") %}</th>
+                <th style="width: 8%">{%= __("Task Duration") %}</th>
+                <th style="width: 8%">{%= __("Status") %}</th>
+                <th style="width: 8%">{%= __("Priority") %}</th>
+                <th style="width: 8%">{%= __("Completion Percentage") %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% var total_duration = 0; %}
+            {% for(var i=0, l=data.length; i<l; i++) { %} {% if (!isNaN(parseFloat(data[i].task_duration))) { %} {%
+                total_duration +=parseFloat(data[i].task_duration); %} {% } %} <tr>
+                <td>{%= i + 1 %}</td>
+                <td>{%= data[i].task_name %}</td>
+                <td>{%= data[i].task_description %}</td>
+                <td>{%= data[i].task_generator %}</td>
+                <td>{%= data[i].assigned_to %}</td>
+                <td>{%= data[i].start_date ? frappe.datetime.str_to_user(data[i].start_date) : __("") %}</td>
+                <td>{%= data[i].end_date ? frappe.datetime.str_to_user(data[i].end_date) : __("") %}</td>
+                <td>{%= data[i].task_duration %}</td>
+                <td>{%= data[i].status %}</td>
+                <td>{%= data[i].priority %}</td>
+                <td class="text-right">{%= data[i].completion_percentage %} %</td>
+                </tr>
+                {% } %}
+                <tr class="bold">
+                    <td colspan="7" class="text-right">{%= __("Total Duration") %}</td>
+                    <td>{%= total_duration %}</td>
+                    <td colspan="3"></td>
+                </tr>
+        </tbody>
+    </table>
+    <p class="text-right text-muted">{%= __("Printed On") %} {%=
+        frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}</p>
+</body>
+
+</html>

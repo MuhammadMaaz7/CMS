@@ -1,0 +1,245 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-06-26 16:05:13.124253",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "naming_series",
+  "subject",
+  "complain_to",
+  "type",
+  "raised_by",
+  "column_break_jkq8z",
+  "name1",
+  "email",
+  "department",
+  "priority",
+  "status",
+  "complaint_details_section",
+  "description",
+  "column_break_diaga",
+  "start_date",
+  "expected_end_date",
+  "attachment",
+  "resolution_details_section",
+  "resolution",
+  "column_break_foooc",
+  "resolution_date",
+  "update_status",
+  "response_details_section",
+  "response_by",
+  "column_break_ib1tx",
+  "response_time"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Link",
+   "label": "Complaint Type",
+   "options": "Complaint Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "Complaint Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Link",
+   "label": "Priority",
+   "options": "Complaint Priority"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Complaint Date"
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach Image",
+   "label": "Attachment"
+  },
+  {
+   "fetch_from": "employee.personal_email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_jkq8z",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "resolution_details_section",
+   "fieldtype": "Section Break",
+   "label": "Resolution Details"
+  },
+  {
+   "fieldname": "column_break_foooc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resolution_date",
+   "fieldtype": "Date",
+   "label": "Resolution Date"
+  },
+  {
+   "fieldname": "complain_to",
+   "fieldtype": "Link",
+   "label": "Complain To",
+   "options": "Complaint Submitting To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "raised_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Raised By",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_end_date",
+   "fieldtype": "Date",
+   "label": "Expected End Date"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "response_details_section",
+   "fieldtype": "Section Break",
+   "label": "Response Details"
+  },
+  {
+   "fieldname": "response_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Response By"
+  },
+  {
+   "fieldname": "column_break_ib1tx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "response_time",
+   "fieldtype": "Datetime",
+   "label": "Response Time"
+  },
+  {
+   "default": "Open",
+   "fieldname": "update_status",
+   "fieldtype": "Link",
+   "label": "Update Status",
+   "options": "Complaint Status"
+  },
+  {
+   "fieldname": "column_break_diaga",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "resolution",
+   "fieldtype": "Text Editor",
+   "label": "Comments / Feedback / Resolution"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "complaint_details_section",
+   "fieldtype": "Section Break",
+   "label": "Complaint Details"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department",
+   "read_only": 1
+  }
+ ],
+ "image_field": "attachment",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-11 12:07:04.278442",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "Complaint",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Complaint Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Complaint User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

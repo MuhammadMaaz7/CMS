@@ -1,0 +1,74 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"oyZAx1ywgK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CMS</span>\",\"col\":12}},{\"id\":\"GApQxzZDvg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Priority\",\"col\":3}},{\"id\":\"9pDXmzwMCj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Status\",\"col\":3}},{\"id\":\"4mhV_JP1cx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint\",\"col\":3}},{\"id\":\"C04DbeNtx9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Type\",\"col\":3}},{\"id\":\"KzeNmqE90n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Task\",\"col\":3}},{\"id\":\"2iTkCrta3w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"complaint test\",\"col\":3}}]",
+ "creation": "2024-06-27 11:48:52.197834",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "support",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "CMS",
+ "links": [],
+ "modified": "2024-07-08 10:26:10.288958",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "CMS",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 16.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Project Task",
+   "link_to": "Project Task",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "complaint test",
+   "link_to": "complaint test",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Complaint Type",
+   "link_to": "Complaint Type",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Complaint Priority",
+   "link_to": "Complaint Priority",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Complaint Status",
+   "link_to": "Complaint Status",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Complaint",
+   "link_to": "Complaint",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "CMS"
+}

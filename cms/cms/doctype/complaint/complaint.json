@@ -125,7 +125,7 @@
    "fieldname": "complain_to",
    "fieldtype": "Link",
    "label": "Complain To",
-   "options": "Complaint Submitting To",
+   "options": "Complaint Submitting",
    "reqd": 1
   },
   {
@@ -195,7 +195,7 @@
  "image_field": "attachment",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-11 12:07:04.278442",
+ "modified": "2024-07-13 17:25:06.567955",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaint",

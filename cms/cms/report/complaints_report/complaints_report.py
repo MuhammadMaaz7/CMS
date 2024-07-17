@@ -19,16 +19,19 @@ def execute(filters=None):
         row = frappe._dict({
             'name': d.name,
             'subject': d.subject,
+            'description': d.description,
             'raised_by': d.raised_by,
             'name1': d.name1,
-            'email': d.email,
+            # 'email': d.email,
             'department': d.department,
+            'complain_to': d.complain_to, 
+            'type': d.type, #added
             'priority': d.priority,
             'status': d.status,
-            'description': d.description,
             'start_date': d.start_date,
             'expected_end_date': d.expected_end_date,
             'resolution_date': d.resolution_date,
+            'resolution': d.resolution,
             'response_by': d.response_by,
             'response_time': d.response_time
         })
@@ -52,6 +55,12 @@ def get_columns():
             "width": 100
         },
         {
+            "label": _("Description"),
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "width": 200,
+        },
+        {
             "label": _("Raised By"),
             "fieldname": "raised_by",
             "fieldtype": "Link",
@@ -59,16 +68,36 @@ def get_columns():
             "width": 100
         },
         {
-            "label": _("Email"),
-            "fieldname": "email",
+            "label": _("Name"),
+            "fieldname": "name1",
             "fieldtype": "Data",
-            "width": 150,
+            "width": 100
         },
+        # {
+        #     "label": _("Email"),
+        #     "fieldname": "email",
+        #     "fieldtype": "Data",
+        #     "width": 150,
+        # },
         {
             "label": _("Department"),
             "fieldname": "department",
             "fieldtype": "Link",
             "options": "Department",
+            "width": 100
+        },
+        {
+            "label": _("Complain To"),
+            "fieldname": "complain_to",
+            "fieldtype": "Link",
+            "options": "Complaint Submitting",
+            "width": 100
+        },
+        {
+            "label": _("Complain Type"),
+            "fieldname": "type",
+            "fieldtype": "Link",
+            "options": "Complaint Type",
             "width": 100
         },
         {
@@ -86,12 +115,6 @@ def get_columns():
             "width": 100
         },
         {
-            "label": _("Description"),
-            "fieldname": "description",
-            "fieldtype": "Text",
-            "width": 200,
-        },
-        {
             "label": _("Complaint Date"),
             "fieldname": "start_date",
             "fieldtype": "Date",
@@ -107,6 +130,12 @@ def get_columns():
             "label": _("Resolution Date"),
             "fieldname": "resolution_date",
             "fieldtype": "Date",
+            "width": 100,
+        },
+        {
+            "label": _("Resolution"),
+            "fieldname": "resolution",
+            "fieldtype": "Text",
             "width": 100,
         },
         {
@@ -129,8 +158,9 @@ def get_complaints_data(filters):
     data = frappe.get_all(
         doctype='Complaint',
         fields=[
-            'name', 'subject', 'raised_by', 'email', 'department', 'priority', 'status', 'description',
-            'start_date', 'expected_end_date', 'resolution_date', 'response_by', 'response_time'
+            'name', 'subject', 'raised_by','name1' # ,'email'
+            , 'department', 'priority', 'status', 'description','complain_to','type',
+            'start_date', 'expected_end_date', 'resolution_date', 'resolution','response_by', 'response_time'
         ],
         filters=conditions
     )
@@ -138,17 +168,17 @@ def get_complaints_data(filters):
 
 def get_conditions(filters):
     conditions = {}
-    if filters.get("start_date") and filters.get("end_date"):
+    if filters.get("start_date") and filters.get("resolution_date"):
         conditions["start_date"] = [">=", filters.get("start_date")]
-        conditions["end_date"] = ["<=", filters.get("end_date")]
+        conditions["resolution_date"] = ["<=", filters.get("resolution_date")]
     else:
         if filters.get("start_date"):
             conditions["start_date"] = [">=", filters.get("start_date")]
-        if filters.get("end_date"):
-            conditions["end_date"] = ["<=", filters.get("end_date")]
+        if filters.get("resolution_date"):
+            conditions["resolution_date"] = ["<=", filters.get("resolution_date")]
 
     for key, value in filters.items():
-        if key not in ["start_date", "end_date"] and filters.get(key):
+        if key not in ["start_date", "resolution_date"] and filters.get(key):
             conditions[key] = value
 
     return conditions

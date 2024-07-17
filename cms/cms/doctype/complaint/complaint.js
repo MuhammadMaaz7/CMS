@@ -217,7 +217,7 @@ frappe.ui.form.on('Complaint', {
 	onload: function (frm) {
 		if (frappe.user.has_role('CMS Admin') || frappe.user.has_role('CMS IT')) {
 
-			frm.set_value('resolution_date', frappe.datetime.nowdate());
+			// frm.set_value('resolution_date', frappe.datetime.nowdate());
 			frm.set_value('response_time', frappe.datetime.now_datetime());
 
 			frappe.call({
@@ -237,6 +237,16 @@ frappe.ui.form.on('Complaint', {
 					}
 				}
 			});
+		}
+	}
+});
+
+frappe.ui.form.on('Complaint', {
+	status: function (frm) {
+		if (frm.doc.status === 'Closed' || frm.doc.status === 'Resolved') {
+			frm.set_value('resolution_date', frappe.datetime.nowdate());
+		} else {
+			frm.set_value('resolution_date', null);
 		}
 	}
 });

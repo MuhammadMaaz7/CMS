@@ -20,12 +20,10 @@ def execute(filters=None):
             'name': d.name,
             'subject': d.subject,
             'description': d.description,
-            'raised_by': d.raised_by,
             'name1': d.name1,
-            # 'email': d.email,
             'department': d.department,
-            'complain_to': d.complain_to, 
-            'type': d.type, #added
+            'complain_to': d.complain_to,
+            'type': d.type,
             'priority': d.priority,
             'status': d.status,
             'start_date': d.start_date,
@@ -62,23 +60,10 @@ def get_columns():
         },
         {
             "label": _("Raised By"),
-            "fieldname": "raised_by",
-            "fieldtype": "Link",
-            "options": "Employee",
-            "width": 100
-        },
-        {
-            "label": _("Name"),
             "fieldname": "name1",
             "fieldtype": "Data",
             "width": 100
         },
-        # {
-        #     "label": _("Email"),
-        #     "fieldname": "email",
-        #     "fieldtype": "Data",
-        #     "width": 150,
-        # },
         {
             "label": _("Department"),
             "fieldname": "department",
@@ -158,9 +143,9 @@ def get_complaints_data(filters):
     data = frappe.get_all(
         doctype='Complaint',
         fields=[
-            'name', 'subject', 'raised_by','name1' # ,'email'
-            , 'department', 'priority', 'status', 'description','complain_to','type',
-            'start_date', 'expected_end_date', 'resolution_date', 'resolution','response_by', 'response_time'
+            'name', 'subject', 'name1', 'department', 'priority', 'status', 'description',
+            'complain_to', 'type', 'start_date', 'expected_end_date', 'resolution_date',
+            'resolution', 'response_by', 'response_time'
         ],
         filters=conditions
     )
@@ -168,6 +153,7 @@ def get_complaints_data(filters):
 
 def get_conditions(filters):
     conditions = {}
+    
     if filters.get("start_date") and filters.get("resolution_date"):
         conditions["start_date"] = [">=", filters.get("start_date")]
         conditions["resolution_date"] = ["<=", filters.get("resolution_date")]
@@ -178,7 +164,9 @@ def get_conditions(filters):
             conditions["resolution_date"] = ["<=", filters.get("resolution_date")]
 
     for key, value in filters.items():
-        if key not in ["start_date", "resolution_date"] and filters.get(key):
+        if key not in ["start_date", "resolution_date"] and value:
+            if key == "department" and value == "All Departments":
+                continue
             conditions[key] = value
 
     return conditions

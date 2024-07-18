@@ -1,6 +1,18 @@
 frappe.query_reports["Complaints Report"] = {
 	"filters": [
 		{
+			"label": "From Date",
+			"fieldname": "start_date",
+			"fieldtype": "Date",
+			"width": 100
+		},
+		{
+			"label": "To Date",
+			"fieldname": "resolution_date",
+			"fieldtype": "Date",
+			"width": 100
+		},
+		{
 			"label": "Complaint Number",
 			"fieldname": "name",
 			"fieldtype": "Link",
@@ -33,18 +45,6 @@ frappe.query_reports["Complaints Report"] = {
 			"fieldname": "priority",
 			"fieldtype": "Link",
 			"options": "Complaint Priority",
-			"width": 100
-		},
-		{
-			"label": "From Date",
-			"fieldname": "start_date",
-			"fieldtype": "Date",
-			"width": 100
-		},
-		{
-			"label": "To Date",
-			"fieldname": "resolution_date",
-			"fieldtype": "Date",
 			"width": 100
 		}
 	]

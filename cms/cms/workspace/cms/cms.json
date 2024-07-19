@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"oyZAx1ywgK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CMS</span>\",\"col\":12}},{\"id\":\"GApQxzZDvg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Priority\",\"col\":3}},{\"id\":\"9pDXmzwMCj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Status\",\"col\":3}},{\"id\":\"4mhV_JP1cx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint\",\"col\":3}},{\"id\":\"C04DbeNtx9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Type\",\"col\":3}},{\"id\":\"KzeNmqE90n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Task\",\"col\":3}},{\"id\":\"fbaHJO5dzQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Report\",\"col\":3}},{\"id\":\"Un21sLbnG2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Submitting\",\"col\":3}},{\"id\":\"2iTkCrta3w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"complaint test\",\"col\":3}}]",
+ "content": "[{\"id\":\"oyZAx1ywgK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">CMS</span>\",\"col\":12}},{\"id\":\"GApQxzZDvg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Priority\",\"col\":3}},{\"id\":\"9pDXmzwMCj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Status\",\"col\":3}},{\"id\":\"4mhV_JP1cx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint\",\"col\":3}},{\"id\":\"C04DbeNtx9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Type\",\"col\":3}},{\"id\":\"KzeNmqE90n\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Project Task\",\"col\":3}},{\"id\":\"FoZ2OfOH_k\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":3}},{\"id\":\"fbaHJO5dzQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Report\",\"col\":3}},{\"id\":\"Un21sLbnG2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Submitting\",\"col\":3}},{\"id\":\"2iTkCrta3w\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"complaint test\",\"col\":3}}]",
  "creation": "2024-06-27 11:48:52.197834",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "CMS",
  "links": [],
- "modified": "2024-07-16 13:27:58.618557",
+ "modified": "2024-07-20 00:26:10.325141",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "CMS",
@@ -38,6 +38,13 @@
    "link_to": "Complaint Submitting",
    "stats_filter": "[]",
    "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Dashboard",
+   "link_to": "Complaints Dashboard",
+   "type": "Dashboard"
   },
   {
    "color": "Grey",

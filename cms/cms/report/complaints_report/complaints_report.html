@@ -69,48 +69,60 @@
         <h1>{%= __("Complaint Report") %}</h1>
     </div>
     <h4 class="text-center">
-        {%= __("Report for") %} {%= filters.complaint_type || __("All Complaints") %}
+        {%= __("Report for") %} {%= filters.type || __("All Complaints") %}
     </h4>
     <h5 class="text-center {%= filters.start_date ? "" : " hidden" %}">
         {%= __("From: ") %} {%= filters.start_date ? frappe.datetime.str_to_user(filters.start_date) : __("") %}
     </h5>
-    <h5 class="text-center {%= filters.end_date ? "" : " hidden" %}">
-        {%= __("To: ") %} {%= filters.end_date ? frappe.datetime.str_to_user(filters.end_date) : __("") %}
+    <h5 class="text-center {%= filters.resolution_date ? "" : " hidden" %}">
+        {%= __("To: ") %} {%= filters.resolution_date ? frappe.datetime.str_to_user(filters.resolution_date) : __("") %}
     </h5>
     <hr>
     <table>
         <thead>
             <tr>
                 <th style="width: 5%">{%= __("S.No.") %}</th>
+                <th style="width: 10%">{%= __("Complaint Number") %}</th>
                 <th style="width: 10%">{%= __("Subject") %}</th>
+                <th style="width: 10%">{%= __("Description") %}</th>
                 <th style="width: 10%">{%= __("Raised By") %}</th>
                 <th style="width: 10%">{%= __("Department") %}</th>
+                <th style="width: 10%">{%= __("Complain To") %}</th>
+                <th style="width: 10%">{%= __("Complain Type") %}</th>
                 <th style="width: 10%">{%= __("Priority") %}</th>
                 <th style="width: 10%">{%= __("Status") %}</th>
-                <th style="width: 15%">{%= __("Description") %}</th>
                 <th style="width: 10%">{%= __("Complaint Date") %}</th>
                 <th style="width: 10%">{%= __("Expected End Date") %}</th>
                 <th style="width: 10%">{%= __("Resolution Date") %}</th>
+                <th style="width: 10%">{%= __("Resolution") %}</th>
+                <th style="width: 10%">{%= __("Response By") %}</th>
+                <th style="width: 10%">{%= __("Response Time") %}</th>
             </tr>
         </thead>
         <tbody>
             {% var total_complaints = data.length; %}
             {% for(var i=0, l=data.length; i<l; i++) { %} <tr>
                 <td>{%= i + 1 %}</td>
+                <td>{%= data[i].name %}</td>
                 <td>{%= data[i].subject %}</td>
-                <td>{%= data[i].raised_by %}</td>
+                <td>{%= data[i].description %}</td>
+                <td>{%= data[i].name1 %}</td>
                 <td>{%= data[i].department %}</td>
+                <td>{%= data[i].complain_to %}</td>
+                <td>{%= data[i].type %}</td>
                 <td>{%= data[i].priority %}</td>
                 <td>{%= data[i].status %}</td>
-                <td>{%= data[i].description %}</td>
                 <td>{%= data[i].start_date ? frappe.datetime.str_to_user(data[i].start_date) : __("") %}</td>
                 <td>{%= data[i].expected_end_date ? frappe.datetime.str_to_user(data[i].expected_end_date) : __("") %}
                 </td>
                 <td>{%= data[i].resolution_date ? frappe.datetime.str_to_user(data[i].resolution_date) : __("") %}</td>
+                <td>{%= data[i].resolution %}</td>
+                <td>{%= data[i].response_by %}</td>
+                <td>{%= data[i].response_time %}</td>
                 </tr>
                 {% } %}
                 <tr class="bold">
-                    <td colspan="10" class="text-right">{%= __("Total Complaints") %}: {%= total_complaints %}</td>
+                    <td colspan="16" class="text-right">{%= __("Total Complaints") %}: {%= total_complaints %}</td>
                 </tr>
         </tbody>
     </table>

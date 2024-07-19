@@ -16,11 +16,11 @@ doc_events = {
     }
 }
 
-doc_events = {
-    "Complaint": {
-        "after_insert": "cms.cms.doctype.complaint.complaint.send_complaint_email"
-    }
-}
+# doc_events = {
+#     "Complaint": {
+#         "after_insert": "cms.cms.doctype.complaint.complaint.send_complaint_email"
+#     }
+# }
 
 # doc_events = {
 #     "Complaint": {

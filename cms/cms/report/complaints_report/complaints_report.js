@@ -46,6 +46,13 @@ frappe.query_reports["Complaints Report"] = {
 			"fieldtype": "Link",
 			"options": "Complaint Priority",
 			"width": 100
+		},
+		{
+			"label": "Type",
+			"fieldname": "type",
+			"fieldtype": "Link",
+			"options": "Complaint Type",
+			"width": 100
 		}
 	]
 };

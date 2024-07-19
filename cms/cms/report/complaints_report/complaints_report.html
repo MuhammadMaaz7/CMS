@@ -5,32 +5,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        th,
-        td {
-            border: 3px solid black;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            color: #fff;
-            text-align: center;
-            font-weight: bold;
-            text-transform: capitalize;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        .container {
+            width: 99%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .header {
@@ -39,11 +25,42 @@
         }
 
         .header h1 {
-            font-weight: bold;
+            font-size: 24px;
+            color: #333333;
+            margin: 0;
         }
 
-        .text-center {
+        .header h4,
+        .header h5 {
+            margin: 5px 0;
+            color: #666666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            padding: 8px;
             text-align: center;
+            font-size: 10px;
+        }
+
+        th {
+            background-color: #333333;
+            color: white;
+            font-weight: bold !important;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
         }
 
         .text-right {
@@ -51,83 +68,77 @@
         }
 
         .text-muted {
-            color: #6c757d;
+            color: #999999;
         }
 
         .hidden {
             display: none;
         }
-
-        .bold {
-            font-weight: bold;
-        }
     </style>
 </head>
 
 <body>
-    <div class="header">
-        <h1>{%= __("Complaint Report") %}</h1>
+    <div class="container">
+        <div class="header">
+            <h1>{%= __("Complaint Report") %}</h1>
+            <h4>{%= __("Report for All Complaints") %}</h4>
+            <h5 class="{%= filters.start_date ? "" : " hidden" %}">
+                {%= __("From: ") %} {%= filters.start_date ? frappe.datetime.str_to_user(filters.start_date) : __("") %}
+            </h5>
+            <h5 class="{%= filters.resolution_date ? "" : " hidden" %}">
+                {%= __("To: ") %} {%= filters.resolution_date ? frappe.datetime.str_to_user(filters.resolution_date) :
+                __("") %}
+            </h5>
+        </div>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 4%">{%= __("S.No.") %}</th>
+                    <th style="width: 7%">{%= __("Complaint Number") %}</th>
+                    <th style="width: 7%">{%= __("Subject") %}</th>
+                    <th style="width: 7%">{%= __("Description") %}</th>
+                    <th style="width: 7%">{%= __("Raised By") %}</th>
+                    <th style="width: 7%">{%= __("Department") %}</th>
+                    <th style="width: 7%">{%= __("Complain To") %}</th>
+                    <th style="width: 7%">{%= __("Complain Type") %}</th>
+                    <th style="width: 7%">{%= __("Priority") %}</th>
+                    <th style="width: 7%">{%= __("Status") %}</th>
+                    <th style="width: 7%">{%= __("Complaint Date") %}</th>
+                    <th style="width: 7%">{%= __("Expected End Date") %}</th>
+                    <th style="width: 7%">{%= __("Resolution Date") %}</th>
+                    <th style="width: 7%">{%= __("Resolution") %}</th>
+                    <th style="width: 7%">{%= __("Response By") %}</th>
+                    <th style="width: 7%">{%= __("Response Time") %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for(var i=0, l=data.length; i<l; i++) { %} <tr>
+                    <td>{%= i + 1 %}</td>
+                    <td>{%= data[i].name %}</td>
+                    <td>{%= data[i].subject %}</td>
+                    <td>{%= data[i].description %}</td>
+                    <td>{%= data[i].name1 %}</td>
+                    <td>{%= data[i].department %}</td>
+                    <td>{%= data[i].complain_to %}</td>
+                    <td>{%= data[i].type %}</td>
+                    <td>{%= data[i].priority %}</td>
+                    <td>{%= data[i].status %}</td>
+                    <td>{%= data[i].start_date ? frappe.datetime.str_to_user(data[i].start_date) : __("") %}</td>
+                    <td>{%= data[i].expected_end_date ? frappe.datetime.str_to_user(data[i].expected_end_date) : __("")
+                        %}</td>
+                    <td>{%= data[i].resolution_date ? frappe.datetime.str_to_user(data[i].resolution_date) : __("") %}
+                    </td>
+                    <td>{%= data[i].resolution %}</td>
+                    <td>{%= data[i].response_by %}</td>
+                    <td>{%= data[i].response_time %}</td>
+                    </tr>
+                    {% } %}
+            </tbody>
+        </table>
+        <p class="text-right text-muted">{%= __("Printed On") %} {%=
+            frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}</p>
     </div>
-    <h4 class="text-center">
-        {%= __("Report for") %} {%= filters.type || __("All Complaints") %}
-    </h4>
-    <h5 class="text-center {%= filters.start_date ? "" : " hidden" %}">
-        {%= __("From: ") %} {%= filters.start_date ? frappe.datetime.str_to_user(filters.start_date) : __("") %}
-    </h5>
-    <h5 class="text-center {%= filters.resolution_date ? "" : " hidden" %}">
-        {%= __("To: ") %} {%= filters.resolution_date ? frappe.datetime.str_to_user(filters.resolution_date) : __("") %}
-    </h5>
-    <hr>
-    <table>
-        <thead>
-            <tr>
-                <th style="width: 5%">{%= __("S.No.") %}</th>
-                <th style="width: 10%">{%= __("Complaint Number") %}</th>
-                <th style="width: 10%">{%= __("Subject") %}</th>
-                <th style="width: 10%">{%= __("Description") %}</th>
-                <th style="width: 10%">{%= __("Raised By") %}</th>
-                <th style="width: 10%">{%= __("Department") %}</th>
-                <th style="width: 10%">{%= __("Complain To") %}</th>
-                <th style="width: 10%">{%= __("Complain Type") %}</th>
-                <th style="width: 10%">{%= __("Priority") %}</th>
-                <th style="width: 10%">{%= __("Status") %}</th>
-                <th style="width: 10%">{%= __("Complaint Date") %}</th>
-                <th style="width: 10%">{%= __("Expected End Date") %}</th>
-                <th style="width: 10%">{%= __("Resolution Date") %}</th>
-                <th style="width: 10%">{%= __("Resolution") %}</th>
-                <th style="width: 10%">{%= __("Response By") %}</th>
-                <th style="width: 10%">{%= __("Response Time") %}</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% var total_complaints = data.length; %}
-            {% for(var i=0, l=data.length; i<l; i++) { %} <tr>
-                <td>{%= i + 1 %}</td>
-                <td>{%= data[i].name %}</td>
-                <td>{%= data[i].subject %}</td>
-                <td>{%= data[i].description %}</td>
-                <td>{%= data[i].name1 %}</td>
-                <td>{%= data[i].department %}</td>
-                <td>{%= data[i].complain_to %}</td>
-                <td>{%= data[i].type %}</td>
-                <td>{%= data[i].priority %}</td>
-                <td>{%= data[i].status %}</td>
-                <td>{%= data[i].start_date ? frappe.datetime.str_to_user(data[i].start_date) : __("") %}</td>
-                <td>{%= data[i].expected_end_date ? frappe.datetime.str_to_user(data[i].expected_end_date) : __("") %}
-                </td>
-                <td>{%= data[i].resolution_date ? frappe.datetime.str_to_user(data[i].resolution_date) : __("") %}</td>
-                <td>{%= data[i].resolution %}</td>
-                <td>{%= data[i].response_by %}</td>
-                <td>{%= data[i].response_time %}</td>
-                </tr>
-                {% } %}
-                <tr class="bold">
-                    <td colspan="16" class="text-right">{%= __("Total Complaints") %}: {%= total_complaints %}</td>
-                </tr>
-        </tbody>
-    </table>
-    <p class="text-right text-muted">{%= __("Printed On") %} {%=
-        frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}</p>
 </body>
 
 </html>

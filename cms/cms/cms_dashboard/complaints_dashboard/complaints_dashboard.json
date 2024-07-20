@@ -12,7 +12,8 @@
  ],
  "charts": [
   {
-   "width": "Half"
+   "chart": "Complaints Per Month",
+   "width": "Full"
   }
  ],
  "creation": "2024-07-19 23:09:47.499459",
@@ -20,9 +21,9 @@
  "docstatus": 0,
  "doctype": "Dashboard",
  "idx": 0,
- "is_default": 0,
+ "is_default": 1,
  "is_standard": 1,
- "modified": "2024-07-20 00:29:01.479297",
+ "modified": "2024-07-20 16:26:43.335737",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaints Dashboard",

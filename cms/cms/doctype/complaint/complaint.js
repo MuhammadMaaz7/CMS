@@ -28,6 +28,8 @@ function initialPriority(frm) {
 	if (frm.is_new()) {
 		frm.set_value('priority', "Low");
 		frm.refresh_field('priority');
+		frm.set_value('resolution_time',0);
+		frm.refresh_field('resolution_time');
 	}
 }
 
@@ -166,6 +168,7 @@ frappe.ui.form.on('Complaint', {
 					frm.set_df_property('column_break_foooc', 'hidden', 1);
 					frm.set_df_property('resolution_date', 'hidden', 1);
 					frm.set_df_property('update_status', 'hidden', 1);
+					frm.set_df_property('resolution_time', 'hidden', 1);
 					frm.set_df_property('response_details_section', 'hidden', 1);
 					frm.set_df_property('response_by', 'hidden', 1);
 					frm.set_df_property('column_break_ib1tx', 'hidden', 1);
@@ -175,6 +178,7 @@ frappe.ui.form.on('Complaint', {
 						frm.set_df_property(field.df.fieldname, 'hidden', 0);
 						frm.set_df_property(field.df.fieldname, 'read_only', 1);
 					});
+					frm.set_df_property('resolution_time', 'hidden', 1);
 					frm.set_df_property('resolution_details_section', 'hidden', 0);
 					frm.set_df_property('resolution', 'hidden', 0);
 					frm.set_df_property('column_break_foooc', 'hidden', 0);
@@ -200,6 +204,7 @@ frappe.ui.form.on('Complaint', {
 				frm.set_df_property('attachment', 'read_only', 1);
 				frm.set_df_property('description', 'read_only', 1);
 				frm.set_df_property('resolution_date', 'read_only', 1);
+				frm.set_df_property('resolution_time', 'read_only', 1);
 
 			}
 		}
@@ -248,5 +253,15 @@ frappe.ui.form.on('Complaint', {
 		} else {
 			frm.set_value('resolution_date', null);
 		}
+	}
+});
+
+frappe.ui.form.on('Complaint', {
+	resolution_date: function (frm) {
+		var start_date = frappe.datetime.str_to_obj(frm.doc.start_date);
+		var end_date = frappe.datetime.str_to_obj(frm.doc.resolution_date);
+
+		var duration = frappe.datetime.get_day_diff(end_date, start_date) + 1;
+		frm.set_value('resolution_time', duration);
 	}
 });

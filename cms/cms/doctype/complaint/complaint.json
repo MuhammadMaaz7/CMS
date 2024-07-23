@@ -31,6 +31,7 @@
   "column_break_foooc",
   "resolution_date",
   "update_status",
+  "resolution_time",
   "response_details_section",
   "response_by",
   "column_break_ib1tx",
@@ -190,12 +191,17 @@
    "label": "Department",
    "options": "Department",
    "read_only": 1
+  },
+  {
+   "fieldname": "resolution_time",
+   "fieldtype": "Float",
+   "label": "Resolution Time"
   }
  ],
  "image_field": "attachment",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-13 17:25:06.567955",
+ "modified": "2024-07-23 14:46:25.832017",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaint",

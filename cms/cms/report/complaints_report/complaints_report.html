@@ -17,6 +17,7 @@
             background-color: #ffffff;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
         }
 
         .header {
@@ -39,6 +40,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            table-layout: fixed;
         }
 
         th,
@@ -47,6 +49,7 @@
             padding: 8px;
             text-align: center;
             font-size: 10px;
+            word-wrap: break-word;
         }
 
         th {
@@ -96,18 +99,18 @@
                 <tr>
                     <th style="width: 4%">{%= __("S.No.") %}</th>
                     <th style="width: 7%">{%= __("Complaint Number") %}</th>
-                    <th style="width: 7%">{%= __("Subject") %}</th>
-                    <th style="width: 7%">{%= __("Description") %}</th>
-                    <th style="width: 7%">{%= __("Raised By") %}</th>
-                    <th style="width: 7%">{%= __("Department") %}</th>
+                    <th style="width: 6%">{%= __("Subject") %}</th>
+                    <th style="width: 8%">{%= __("Description") %}</th>
+                    <th style="width: 6%">{%= __("Raised By") %}</th>
+                    <th style="width: 8%">{%= __("Department") %}</th>
                     <th style="width: 7%">{%= __("Complain To") %}</th>
                     <th style="width: 7%">{%= __("Complain Type") %}</th>
-                    <th style="width: 7%">{%= __("Priority") %}</th>
-                    <th style="width: 7%">{%= __("Status") %}</th>
+                    <th style="width: 6%">{%= __("Priority") %}</th>
+                    <th style="width: 6%">{%= __("Status") %}</th>
                     <th style="width: 7%">{%= __("Complaint Date") %}</th>
                     <th style="width: 7%">{%= __("Expected End Date") %}</th>
                     <th style="width: 7%">{%= __("Resolution Date") %}</th>
-                    <th style="width: 7%">{%= __("Resolution") %}</th>
+                    <th style="width: 6%">{%= __("Resolution") %}</th>
                     <th style="width: 7%">{%= __("Response By") %}</th>
                     <th style="width: 7%">{%= __("Response Time") %}</th>
                 </tr>

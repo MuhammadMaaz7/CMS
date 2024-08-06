@@ -177,7 +177,7 @@
   {
    "fieldname": "resolution",
    "fieldtype": "Text Editor",
-   "label": "Comments / Feedback / Resolution"
+   "label": "Comments"
   },
   {
    "collapsible": 1,
@@ -201,7 +201,7 @@
  "image_field": "attachment",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-06 11:29:03.227880",
+ "modified": "2024-08-06 15:17:03.720220",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaint",

@@ -220,50 +220,9 @@ frappe.ui.form.on('Complaint', {
 });
 
 
-// frappe.ui.form.on('Complaint', {
-// 	resolution: function (frm) {
-//         if (frappe.session.user != "Administrator") {
-//             if (frappe.user.has_role('CMS Admin') || frappe.user.has_role('CMS IT')) {
-
-//                 frm.set_value('response_time', frappe.datetime.now_datetime());
-
-//                 frappe.call({
-//                     method: 'frappe.client.get_value',
-//                     args: {
-//                         'doctype': 'Employee',
-//                         'fieldname': ['employee_name'],
-//                         'filters': { 'user_id': frappe.session.user }
-//                     },
-//                     callback: function (r) {
-//                         if (r.message) {
-//                             let employeeName = r.message.employee_name;
-//                             frm.set_value('response_by', employeeName);
-//                             frm.refresh_field('response_by');
-//                         } else {
-//                             frappe.msgprint('Employee name not found for the logged-in user.');
-//                         }
-//                     }
-//                 });
-//             }
-//         }
-//     },
-//     update_status: function (frm) {
-//         frm.trigger('resolution');
-//     }
-// });
-
 frappe.ui.form.on('Complaint', {
-    resolution: function (frm) {
-        frm.trigger('set_response_update_flag');
-    },
-    update_status: function (frm) {
-        frm.trigger('set_response_update_flag');
-    },
-    set_response_update_flag: function (frm) {
-        frm.doc.response_update_required = true;
-    },
-    before_save: function (frm) {
-        if (frm.doc.response_update_required && frappe.session.user != "Administrator") {
+	resolution: function (frm) {
+        if (frappe.session.user != "Administrator") {
             if (frappe.user.has_role('CMS Admin') || frappe.user.has_role('CMS IT')) {
 
                 frm.set_value('response_time', frappe.datetime.now_datetime());
@@ -285,14 +244,13 @@ frappe.ui.form.on('Complaint', {
                         }
                     }
                 });
-
-                // Reset the flag after updating
-                frm.doc.response_update_required = false;
             }
         }
+    },
+    update_status: function (frm) {
+        frm.trigger('resolution');
     }
 });
-
 
 frappe.ui.form.on('Complaint', {
 	status: function (frm) {

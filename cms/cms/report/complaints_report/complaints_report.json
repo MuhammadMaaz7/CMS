@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "",
- "modified": "2024-07-16 13:27:14.300249",
+ "modified": "2024-08-06 11:13:24.220512",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaints Report",
@@ -25,9 +25,6 @@
   },
   {
    "role": "Complaint Manager"
-  },
-  {
-   "role": "Complaint User"
   },
   {
    "role": "CMS Admin"

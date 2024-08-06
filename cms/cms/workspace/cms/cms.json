@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"1YrSsFw9mW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"4mhV_JP1cx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint\",\"col\":3}},{\"id\":\"GApQxzZDvg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Priority\",\"col\":3}},{\"id\":\"9pDXmzwMCj\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Status\",\"col\":3}},{\"id\":\"C04DbeNtx9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Type\",\"col\":3}},{\"id\":\"Un21sLbnG2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint Submitting\",\"col\":3}},{\"id\":\"7Nqzmu9AMa\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"fbaHJO5dzQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Report\",\"col\":3}},{\"id\":\"fu8L4GyLUN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Timeline\",\"col\":3}},{\"id\":\"GxU-Y-8OxO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Dashboard</b></span>\",\"col\":12}},{\"id\":\"oLvZAuS9q2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Dashboard\",\"col\":3}}]",
+ "content": "[{\"id\":\"1YrSsFw9mW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"4mhV_JP1cx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaint\",\"col\":3}},{\"id\":\"fbaHJO5dzQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Report\",\"col\":3}},{\"id\":\"oLvZAuS9q2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Complaints Dashboard\",\"col\":3}},{\"id\":\"xJJW5dQo0L\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"PRGLOv3fLi\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports and Doctypes</b></span>\",\"col\":12}},{\"id\":\"mDJG_pJPXz\",\"type\":\"card\",\"data\":{\"card_name\":\"Complaint Related Doctypes\",\"col\":4}},{\"id\":\"pBVFAAAQgn\",\"type\":\"card\",\"data\":{\"card_name\":\"Complaint Reports\",\"col\":4}}]",
  "creation": "2024-06-27 11:48:52.197834",
  "custom_blocks": [],
  "docstatus": 0,
@@ -11,8 +11,97 @@
  "idx": 0,
  "is_hidden": 0,
  "label": "CMS",
- "links": [],
- "modified": "2024-07-24 23:23:36.136421",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint Reports",
+   "link_count": 2,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaints Report",
+   "link_count": 0,
+   "link_to": "Complaints Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaints Timeline",
+   "link_count": 0,
+   "link_to": "Complaints Timeline",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint Related Doctypes",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint",
+   "link_count": 0,
+   "link_to": "Complaint",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint Type",
+   "link_count": 0,
+   "link_to": "Complaint Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint Status",
+   "link_count": 0,
+   "link_to": "Complaint Status",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint Priority",
+   "link_count": 0,
+   "link_to": "Complaint Priority",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Complaint Submitting To",
+   "link_count": 0,
+   "link_to": "Complaint Submitting",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2024-07-25 17:31:37.490035",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "CMS",
@@ -27,21 +116,6 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "Complaint Submitting",
-   "link_to": "Complaint Submitting",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Complaints Timeline",
-   "link_to": "Complaints Timeline",
-   "type": "Report"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
    "label": "Complaints Dashboard",
    "link_to": "Complaints Dashboard",
    "type": "Dashboard"
@@ -52,29 +126,6 @@
    "label": "Complaints Report",
    "link_to": "Complaints Report",
    "type": "Report"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Complaint Type",
-   "link_to": "Complaint Type",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Complaint Priority",
-   "link_to": "Complaint Priority",
-   "stats_filter": "[]",
-   "type": "DocType"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Complaint Status",
-   "link_to": "Complaint Status",
-   "type": "DocType"
   },
   {
    "color": "Grey",

@@ -10,7 +10,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letter_head": "Project Task",
- "modified": "2024-07-23 16:11:48.022601",
+ "modified": "2024-08-06 11:14:52.291353",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaints Timeline",
@@ -26,9 +26,6 @@
   },
   {
    "role": "Complaint Manager"
-  },
-  {
-   "role": "Complaint User"
   },
   {
    "role": "CMS Admin"

@@ -70,6 +70,10 @@
             text-align: right;
         }
 
+        .text-left {
+            text-align: left;
+        }
+
         .text-muted {
             color: #999999;
         }
@@ -92,6 +96,8 @@
                 {%= __("To: ") %} {%= filters.resolution_date ? frappe.datetime.str_to_user(filters.resolution_date) :
                 __("") %}
             </h5>
+            <p class="text-left text-muted">{%= __("Printed On") %} {%=
+            frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}</p>
         </div>
         <hr>
         <table>
@@ -108,7 +114,7 @@
                     <th style="width: 6%">{%= __("Priority") %}</th>
                     <th style="width: 6%">{%= __("Status") %}</th>
                     <th style="width: 7%">{%= __("Complaint Date") %}</th>
-                    <th style="width: 7%">{%= __("Expected End Date") %}</th>
+                    <th style="width: 7%">{%= __("Expected Resolution Date") %}</th>
                     <th style="width: 7%">{%= __("Resolution Date") %}</th>
                     <th style="width: 6%">{%= __("Resolution") %}</th>
                     <th style="width: 7%">{%= __("Response By") %}</th>
@@ -139,8 +145,8 @@
                     {% } %}
             </tbody>
         </table>
-        <p class="text-right text-muted">{%= __("Printed On") %} {%=
-            frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}</p>
+        <!-- <p class="text-right text-muted">{%= __("Printed On") %} {%=
+            frappe.datetime.str_to_user(frappe.datetime.get_datetime_as_string()) %}</p> -->
     </div>
 </body>
 

@@ -140,7 +140,7 @@
   {
    "fieldname": "expected_end_date",
    "fieldtype": "Date",
-   "label": "Expected End Date"
+   "label": "Expected Resolution Date"
   },
   {
    "collapsible": 1,
@@ -195,13 +195,13 @@
   {
    "fieldname": "resolution_time",
    "fieldtype": "Float",
-   "label": "Resolution Time"
+   "label": "Resolution Days"
   }
  ],
  "image_field": "attachment",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-07-23 14:46:25.832017",
+ "modified": "2024-08-06 11:29:03.227880",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaint",
@@ -240,6 +240,42 @@
    "read": 1,
    "report": 1,
    "role": "Complaint User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CMS IT",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CMS Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
    "share": 1,
    "write": 1
   }

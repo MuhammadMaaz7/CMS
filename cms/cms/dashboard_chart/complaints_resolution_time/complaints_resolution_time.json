@@ -10,14 +10,30 @@
  "idx": 0,
  "is_public": 1,
  "is_standard": 1,
- "modified": "2024-07-23 15:09:03.427559",
+ "modified": "2024-07-26 11:11:19.353739",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaints Resolution Time",
  "number_of_groups": 0,
  "owner": "Administrator",
  "report_name": "Complaints Timeline",
- "roles": [],
+ "roles": [
+  {
+   "role": "CMS Admin"
+  },
+  {
+   "role": "CMS IT"
+  },
+  {
+   "role": "Complaint Manager"
+  },
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",

@@ -14,8 +14,8 @@
   "complain_to",
   "type",
   "raised_by",
-  "column_break_jkq8z",
   "name1",
+  "column_break_jkq8z",
   "email",
   "department",
   "priority",
@@ -41,6 +41,7 @@
   {
    "fieldname": "naming_series",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Series"
   },
   {
@@ -104,7 +105,7 @@
    "collapsible": 1,
    "fieldname": "resolution_details_section",
    "fieldtype": "Section Break",
-   "label": "Resolution Details"
+   "label": "Feedback Details"
   },
   {
    "fieldname": "column_break_foooc",
@@ -177,7 +178,8 @@
   {
    "fieldname": "resolution",
    "fieldtype": "Text Editor",
-   "label": "Comments"
+   "label": "Feedback",
+   "reqd": 1
   },
   {
    "collapsible": 1,
@@ -201,7 +203,7 @@
  "image_field": "attachment",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-06 15:17:03.720220",
+ "modified": "2024-08-07 15:07:19.373062",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaint",

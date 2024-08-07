@@ -1,0 +1,50 @@
+{
+ "chart_name": "Complaints Resolution Days",
+ "chart_type": "Report",
+ "creation": "2024-07-23 15:07:01.917063",
+ "custom_options": "{\"x_field\": \"name\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"y_field\": \"resolution_time\", \"color\": \"#449CF0\", \"name\": \"row 1\"}], \"y_fields\": [\"resolution_time\"], \"colors\": [\"#449CF0\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "dynamic_filters_json": "",
+ "filters_json": "{}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "modified": "2024-08-07 11:21:20.554073",
+ "modified_by": "Administrator",
+ "module": "CMS",
+ "name": "Complaints Resolution Days",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Complaints Timeline",
+ "roles": [
+  {
+   "role": "CMS Admin"
+  },
+  {
+   "role": "CMS IT"
+  },
+  {
+   "role": "Complaint Manager"
+  },
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Line",
+ "use_report_chart": 0,
+ "x_field": "name",
+ "y_axis": [
+  {
+   "color": "#449CF0",
+   "y_field": "resolution_time"
+  }
+ ]
+}

@@ -179,11 +179,11 @@ frappe.ui.form.on('Complaint', {
 						frm.set_df_property(field.df.fieldname, 'read_only', 1);
 					});
 					frm.set_df_property('resolution_time', 'hidden', 1);
+					frm.set_df_property('update_status', 'hidden', 1);
 					frm.set_df_property('resolution_details_section', 'hidden', 0);
 					frm.set_df_property('resolution', 'hidden', 0);
 					frm.set_df_property('column_break_foooc', 'hidden', 0);
 					frm.set_df_property('resolution_date', 'hidden', 0);
-					frm.set_df_property('update_status', 'hidden', 0);
 					frm.set_df_property('response_details_section', 'hidden', 0);
 					frm.set_df_property('response_by', 'hidden', 0);
 					frm.set_df_property('column_break_ib1tx', 'hidden', 0);

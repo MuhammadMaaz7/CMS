@@ -173,7 +173,7 @@ frappe.ui.form.on('Complaint', {
 					frm.set_df_property('response_by', 'hidden', 1);
 					frm.set_df_property('column_break_ib1tx', 'hidden', 1);
 					frm.set_df_property('response_time', 'hidden', 1);
-				} else {
+				} 	else {
 					frm.fields.forEach(function (field) {
 						frm.set_df_property(field.df.fieldname, 'hidden', 0);
 						frm.set_df_property(field.df.fieldname, 'read_only', 1);

@@ -178,8 +178,7 @@
   {
    "fieldname": "resolution",
    "fieldtype": "Text Editor",
-   "label": "Feedback",
-   "reqd": 1
+   "label": "Feedback"
   },
   {
    "collapsible": 1,
@@ -203,7 +202,7 @@
  "image_field": "attachment",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-07 15:07:19.373062",
+ "modified": "2024-08-20 10:56:37.300909",
  "modified_by": "Administrator",
  "module": "CMS",
  "name": "Complaint",
